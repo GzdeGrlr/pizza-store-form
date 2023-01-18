@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  height: 120px;
+  background-color: #a6e0a6;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container h1 {
+  margin: 0;
+  letter-spacing: 1.8px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2%;
+  flex-wrap: wrap;
+}
+.home-container h2 {
+  letter-spacing: 1.3px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 0 60px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+#name-input {
+  padding: 6px;
+  width: 40%;
+}
+select {
+  padding: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 0 60px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+#order-button {
+  width: 120px;
+  margin: 0 auto;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 0;
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: rgba(199, 78, 56, 0.906);
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.4s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 15px;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#order-button:hover,
+#order-button:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+#order-button:active {
+  background: var(--color);
+  color: #fff;
+}
