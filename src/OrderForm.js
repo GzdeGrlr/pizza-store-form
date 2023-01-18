@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Pizza from "./PizzaOne.jpg";
 import * as yup from "yup";
 import axios from "axios";
@@ -60,6 +60,7 @@ function OrderForm() {
 
   const [disabled, setDisabled] = useState(true);
   const [order, setOrder] = useState("");
+  const myRef = useRef(null);
 
   useEffect(() => {
     schema.isValid(form).then((valid) => setDisabled(!valid));
@@ -100,6 +101,8 @@ function OrderForm() {
       });
   };
 
+  const executeScroll = () => myRef.current.scrollIntoView();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -122,7 +125,7 @@ function OrderForm() {
       .post("https://reqres.in/api/orders", newOrder)
       .then((res) => {
         setOrder(res.data);
-
+        executeScroll();
         setForm({
           name: "",
           size: "",
@@ -430,14 +433,7 @@ function OrderForm() {
           </div>
         </div>
         <div>
-          <img
-            src={Pizza}
-            style={{
-              width: "400px",
-              height: "620px",
-            }}
-            alt="PizzaPhoto"
-          ></img>
+          <img src={Pizza} className="main-img" alt="PizzaPhoto"></img>
         </div>
       </div>
       {order && (
@@ -455,7 +451,7 @@ function OrderForm() {
             Congrats! Your Order has been created with ID: {order.id}. Please be
             sure that you've collected the right order.
           </h3>
-          <pre>
+          <pre ref={myRef}>
             <p>Pizza ID: {order.id}</p>
             <p>Pizza Name: {order.name}</p>
             <p>Pizza Size: {order.size}</p>

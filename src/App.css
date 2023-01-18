@@ -92,3 +92,22 @@ select {
   background: var(--color);
   color: #fff;
 }
+
+.main-img {
+  width: 400px;
+  height: 620px;
+}
+
+@media only screen and (max-width: 939px) {
+  .home-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-img {
+    width: 400px;
+    border-radius: 50%;
+    height: 400px;
+  }
+}

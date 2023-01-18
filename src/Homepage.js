@@ -86,14 +86,7 @@ function Homepage() {
           </Button>
         </div>
         <div>
-          <img
-            src={Pizza}
-            style={{
-              width: "400px",
-              height: "620px",
-            }}
-            alt="PizzaPhoto"
-          ></img>
+          <img src={Pizza} className="main-img" alt="PizzaPhoto"></img>
         </div>
       </div>
     </div>
