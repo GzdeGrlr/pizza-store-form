@@ -64,6 +64,7 @@ function Homepage() {
             padding: "0 20px",
             letterSpacing: "1.3px",
           }}
+          className="resp"
         >
           <h1>
             True Italian <i>Taste</i>. <CiPizza /> Prepared at the speed of{" "}
